@@ -1,0 +1,9 @@
+.titre h1{
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.ajout a{
+    margin-left: 70%;
+}

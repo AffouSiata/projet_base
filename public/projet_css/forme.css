@@ -1,0 +1,27 @@
+/* .formulaire{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+body{
+    background-color: deepskyblue;
+}
+form{
+    width: 600px;
+    margin-left: 30%;
+    margin-top: 5%;
+    background-color:white ;
+    padding: 20px;
+    border-radius: 10px;
+}
+form label{
+    font-size: 40px;
+    font-weight: bold;
+}
+.btn{
+    margin-left: 75%;
+    width: 130px;
+}
+.btn p{
+    font-size: 30px;
+}
