@@ -3,7 +3,7 @@ const app =express();
 const db = require('./database/connexion');
 const index  = require('./route/index');
 const routeforme = require('./route/formulaire')
-
+const {check,validationResult}= require('express-validator')
 
 app.set('views','./views');
 app.set('view engine','ejs')

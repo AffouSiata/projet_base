@@ -34,14 +34,14 @@
                 const element = resultat[index]; %>
 
                 <tr> 
-                  <th scope="row"><%= element.id %></th>
+                  <th scope="row"><%= index + 1 %></th>
                   <td><%= element.nom %></td>
                   <td><%= element.prenom %></td>
                   <td><%= element.password %></td>
                   <td><%= element.email %></td>
                   <td><%= element.numero %></td>
                   <td>
-                     <a href="/edit/<%= element.id %>" class="btn btn-info btn-small" >Modifier</a> 
+                     <a href="/formulaire/<%= element.id %>" class="btn btn-info btn-small" >Modifier</a> 
                      <a href="/delete/<%= element.id %>" onclick="return confirmation()" class="btn btn-danger btn-small">Supprimer  </a> 
                   </td>
                 </tr>
