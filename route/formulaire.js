@@ -7,9 +7,13 @@ const router =  express.Router();
 
 router.get('/',controlle.insertionGet) 
 router.post('/',controlle.insertionPost) 
-router.get('edit/:id',controlle.getOneController)  
+router.get('/login',controlle.connectionGet) 
+router.post('/login',controlle.connectionPost) 
+
+// router.get('edit/:id',controlle.getOneController)  
 router.post('edit/:id',(req,res)=>{
     console.log(req.body);
-})  
+}) 
+
 
 module.exports = router;

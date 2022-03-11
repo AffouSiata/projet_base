@@ -24,7 +24,7 @@ const data =class{
     static insertion = (azerty)=>{
         return new Promise((resolve,reject)=>{
             let {nom,prenom,email,password,numero} = azerty;
-            console.log("donneés",azerty);
+            // console.log("donneés",azerty);
      
             let requete = `INSERT INTO utilisateurs(nom,prenom,email,password,numero) VALUES(?,?,?,?,?);`;
 
@@ -43,6 +43,18 @@ const data =class{
                 }
             }) 
         })
+    }
+
+
+
+    static connectionPost = (nnn)=>{
+       connect.query('SELECT email,password FROM utilisateurs',function(error,resultat){
+           console.log(resultat);
+        //    if(azerty.email == nnn.email  && azerty.password == nnn.password ){
+        //         console.log("connexion reussi");
+        //    }
+
+       }) 
     }
     static suppression = (req)=>{
 
@@ -79,6 +91,24 @@ const data =class{
 
 
     }
+
+
+    static sel = ()=>{
+        return new Promise((resolve,reject)=>
+        connect.query('SELECT * FROM utilisateurs', function(error,resultat){
+               
+            if(error){
+                console.log(error);
+                reject(error)
+                  
+            }
+            else{
+                resolve(resultat)  
+            }
+        })
+        )
+        
+    } 
 
 //   static modifiepost =(req,res)=>{
 //     const id = req.body.id;

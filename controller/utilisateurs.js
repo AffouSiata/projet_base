@@ -9,6 +9,7 @@ const data = require('../request/requete');
 
 const controlle = class{
     static selection =(req=request,res=response)=>{
+        // req.session.user = nom;
         data.sel().then(resultat =>{
             res.render('../views/index',{resultat})
         })
@@ -26,18 +27,31 @@ const controlle = class{
         res.redirect('/')
     
     }
+    static connectionGet =(req=request,res=response)=>{
+        res.render('login')
+
+    }
+    static connectionPost = (req=request,res=response)=>{
+        console.log(req.body);
+        data.connection(req.body)
+        res.redirect('/login')
+    
+    }
     static suppression = (req=request,res=response)=>{
         console.log(req.body);
         data.suppression(req)
         res.redirect('/')
     
     }
-    static getOneController = async (req=request,res=response)=>{
-        // console.log("id: ",req.params.id);
-        let result = await data.getOne(req.params.id)
-        // console.log("result",result);
-        res.render('formulaire',{data: result})
-    }
+    // static getOneController = async (req=request,res=response)=>{
+    //     console.log("id: ",req.params.id);
+    //     let result = await data.getOne(req.params.id)
+    //     console.log("result",result);
+    //     res.render('formulaire',{data: result})
+    // }
+
+
+
     // static modifiepost =(req=request,res=response)=>{
     //     console.log(req.body);
     //     data.suppression(req)
