@@ -1,4 +1,5 @@
 const { promiseImpl, resolveInclude } = require('ejs');
+const req = require('express/lib/request');
 const  connect  = require('../database/connexion');
 
 
@@ -47,12 +48,13 @@ const data =class{
 
 
 
-    static connectionPost = (nnn)=>{
+    static connection = (nnn)=>{
        connect.query('SELECT email,password FROM utilisateurs',function(error,resultat){
            console.log(resultat);
-        //    if(azerty.email == nnn.email  && azerty.password == nnn.password ){
-        //         console.log("connexion reussi");
-        //    }
+           if(resultat.email == nnn.email  && resultat.password == nnn.password ){
+                console.log("connexion reussi",nnn.email);
+           }
+
 
        }) 
     }

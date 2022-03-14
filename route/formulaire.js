@@ -1,14 +1,16 @@
 const express = require('express');
 const controlle = require('../controller/utilisateurs');
 const  connect  = require('../database/connexion');
+ const { valide,message } = require('../request/validation');
 const router =  express.Router();
 
 
 
+
 router.get('/',controlle.insertionGet) 
-router.post('/',controlle.insertionPost) 
-router.get('/login',controlle.connectionGet) 
-router.post('/login',controlle.connectionPost) 
+router.post('/',valide,message,controlle.insertionPost) 
+
+
 
 // router.get('edit/:id',controlle.getOneController)  
 router.post('edit/:id',(req,res)=>{

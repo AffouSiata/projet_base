@@ -3,7 +3,6 @@ const app =express();
 const db = require('./database/connexion');
 const index  = require('./route/index');
 const routeforme = require('./route/formulaire')
-const {check,validationResult}= require('express-validator')
 const  session  =  require ( 'express-session' );
 
 app.set('views','./views');
@@ -12,16 +11,6 @@ app.set('view engine','ejs')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use('/public',express.static('public'));
-
-
-// app.post('/formulaire',[
-//     check('nom')
-//     .not().isEmpty().withMessage('le nom ne peut pas,être vide')
-//     .isLength({
-//         min:3
-//     }).withMessage('le nom doit comporter au moins 3 caractères')
-//     .isAlpha().withMessage('le nom ne peut pas contenir de chiffres ou de caractères spéciaux ')
-// ])
 
 
 // app.set('trust proxy', 1) // trust first proxy

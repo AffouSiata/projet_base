@@ -24,7 +24,7 @@ const controlle = class{
     static insertionPost = (req=request,res=response)=>{
         console.log(req.body);
         data.insertion(req.body)
-        res.redirect('/')
+        res.redirect('/login')
     
     }
     static connectionGet =(req=request,res=response)=>{
@@ -34,11 +34,11 @@ const controlle = class{
     static connectionPost = (req=request,res=response)=>{
         console.log(req.body);
         data.connection(req.body)
-        res.redirect('/login')
+        res.redirect('/')
     
     }
     static suppression = (req=request,res=response)=>{
-        console.log(req.body);
+        // console.log(req.body);
         data.suppression(req)
         res.redirect('/')
     

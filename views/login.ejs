@@ -10,24 +10,29 @@
 </head>
 <body>
 
+
+    
     <div class=" container connexion">
+
+
         <h1>Connexion</h1>
 
-        <form method="post">
-            <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password: </label>
-                <div class="col-sm-10">
-                <input type="password"  name="password" class="form-control"  value="" id="password" >
-                </div>
-            </div>
+        <form action="/login" method = "post">
+            
             <div class="mb-3 row">
                 <label for="inputemail" class="col-sm-2 col-form-label">email:</label>
                 <div class="col-sm-10">
                 <input type="email" name="email" class="form-control"  value="" id="email" >
                 </div>
             </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password: </label>
+                <div class="col-sm-10">
+                <input type="password"  name="password" class="form-control"  value="" id="password" >
+                </div>
+            </div>
             <div class="mb-3">
-                <!-- <a href="" type="submit" class="btn btn-primary btn-small"><p>Validé</p></a>  -->
+                <!-- <a href="/index" type="submit" class="btn btn-primary btn-small"><p>Validé</p></a>  -->
                 <input type="submit" value="Valider">
             </div>
             

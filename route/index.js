@@ -8,6 +8,9 @@ const router =  express.Router();
 
 router.get('/', controlle.selection);
 
+router.get('/login',controlle.connectionGet) 
+router.post('/login',controlle.connectionPost) 
+
 console.log("ma session connecté");
 
 router.get('/delete/:id', controlle.suppression);
