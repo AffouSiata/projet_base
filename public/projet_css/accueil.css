@@ -1,0 +1,349 @@
+.entete{
+    position:absolute;
+    height: 80vh;
+    min-height:760px ;
+    width: 100%;
+    background: url("./home-bg-4dc4b66b752c785811e5c6b1d3df1f90b953d05e0ff367ff34f8823f34a0036a.svg") bottom center; 
+    background-size: cover;
+}
+.navbar-brand img{
+    height: 50px;
+}
+.btn{
+    border-radius: 5px;
+    height: 50px;
+    width: 260px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: rgb(78, 74, 74);
+    border: 1px solid gray;
+    
+
+}
+.text{
+    margin-top: 250px;
+}
+.text a{
+    text-decoration: none;
+}
+.lien1{
+    background-color: #ff6b6b;
+    padding: 2px; 
+    border-radius: 0.5rem;
+    color: white !important;
+    margin-right: 0.5rem !important;
+}
+.lien2{
+    color: #13151b !important;
+    font-weight: 600;
+}
+.text h1{
+    font-weight: 600;
+    font-size: 50px;
+    margin: 20px 0px 20px ;
+   
+}
+.recherche button{
+    height: 70px;
+    width: 420px;
+    background-color: #fff;
+    border-radius: 50px!important;
+}
+.recherche button i{
+    float: right;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+} 
+.defile{
+    display: flex;
+    margin-top: 230px;
+     justify-content: center;
+    align-items: center;
+}
+.defile1{
+    margin-right: 100px;
+}
+.defile1:hover{
+    cursor: pointer;
+}
+.defile1 i{
+    color: dodgerblue;
+    font-size: 20px;
+}
+.test{
+    margin-top: 50px;
+}
+.reduit{
+    margin-left:800px;
+}
+.reduit span{
+   color: dodgerblue;
+}
+.block1 .card{
+    border: none;
+}
+.block2 .card{
+    border: none;
+}
+.block3 .card{
+    border: none;
+}
+.boite .card
+{
+    margin-top: 10px!important;
+    border: none;
+    margin-right: 13px;
+    width: 100%;
+}
+.boite .card img{
+    border-radius: 10px;
+    height: 90px;
+}
+.card a{
+  text-decoration: none;
+  color: #13151b;
+}
+.card img:hover{
+    cursor: pointer;
+}
+.boite{
+   display: flex;
+}
+.card-title{
+    font-size: 17px;
+    font-weight: bold;
+}
+.test1{
+    margin-top: 50px;
+}
+.test1 h1{
+    font-size: 25px;
+}
+.slick-prev{
+    background: none;
+    border: none;
+}
+.slick-next{
+    background: none;
+    border: none;
+}
+.fa-chevron-circle-left{
+    color: rgba(255, 255, 255, 0.886);
+    text-shadow: 0px 0px 20px black;
+    font-size: 35px;
+    height: 140px;
+}
+.fa-chevron-circle-right{
+    color: rgba(255, 255, 255, 0.886);
+    text-shadow: 0px 0px 20px black;
+    font-size: 35px;
+    height: 140px;
+}
+.lien{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.tester{
+    margin-top: 20px;
+}
+.classement{
+    margin-top: 20px;
+}
+.classement .fas{
+    margin-left: 20px!important;
+    font-size: 20px;
+    color: dodgerblue;
+}
+.classement .card{
+    border: none;
+}
+p{
+    color: gray;
+}
+.second{
+    margin-top: 30px;
+    border: 1px solid black;
+    /* height: 560px; */
+    border-radius: 10px;
+    border-color: gray;
+    background-image: url("./fond.jpg");
+    background-size:  auto 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+   
+}
+.dessin i{
+    font-size: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+}
+.liste{
+    margin-top: 40px;
+    border: none;
+}
+.liste img{
+    height: 200px;
+}
+.corps{
+    width: 100%;
+    height: 300px;
+    background-color: #ff6b6b;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.long{
+    padding-top: 21px;
+    width: 100%;
+    padding-left: 50px;
+}
+.long h1{
+    font-size: 50px;
+    width: 700px;
+}
+.long p{
+    width: 550px; 
+}
+ .poste{  
+
+} 
+ .poste img{
+   width: 350px;
+} 
+.pays{
+    margin-top: 50px;
+
+}
+.pays .card{
+    border: none;
+    
+
+}
+.pays .card img{
+    height: 100px;
+    transform: scale(1);
+    transition: 0.2s ease-in-out; 
+   
+}
+.lien2{
+    margin-top: 20px;
+}
+.pays .card:hover img{
+    transform: scale(1.1);
+}
+.tout{
+    width:100%;
+    margin-top: 70px; 
+}
+.bock1{
+    width: 45%;
+    padding: 60px;
+}
+.bock2{
+    width: 55%;
+    padding: 60px;
+}
+.bock2 .col img{
+
+    width: 200px;
+   
+}
+.carre{
+    height: 270px;
+    width: 500px;
+    background: #eaeaeb;
+}
+.haut{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+
+}
+.etoile {
+    margin-right: 190px;
+}
+.etoile span i{
+    border: 1px solid black;
+    padding: 5px;
+    color: white;
+    background-color: green;
+}
+.besoin{
+    height: 500px;
+    margin-top: 90px;
+   
+}
+.besoin .card{
+    border: none;
+     overflow: hidden;
+}
+.besoin .card img{
+    transform: scale(1);
+    transition: 0.2s ease-in-out; 
+}
+.besoin .card:hover img{
+    transform: scale(1.1)
+}
+.besoin .card-text{
+    width: 320px;
+    text-align: justify;
+}
+.besoin .card-title:hover{
+    text-decoration: underline;
+}
+.texte a{
+    text-decoration: none;
+    color: black;
+    font-size:15px ;
+    font-weight: bold;
+    padding-left: 15px;
+}
+.texte p{
+    padding:15px ;
+    color: black;
+}
+.partie{
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    
+}
+.partie1 p{
+    width: 420px;
+}
+.partie2{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    /* margin-right: 140px; */
+    margin-left: 20%;
+}
+.partie2 img{
+    border-radius: 50%;
+    
+}
+.partieB{
+    width: 500px;
+}
+.partie3 {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.partie3 img{
+    border-radius: 50%;
+}
+
+.partieD{
+    width: 500px;
+}
+

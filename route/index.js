@@ -6,18 +6,20 @@ const router =  express.Router();
 
 
 
-router.get('/', controlle.selection);
+
+
+router.get('/',controlle.maliste)
+router.get('/index', controlle.selection);
 
 router.get('/login',controlle.connectionGet) 
 router.post('/login',controlle.connectionPost) 
 
-console.log("ma session connecté");
+
+router.get('/',controlle.insertionGet) 
+router.post('/',controlle.insertionPost) 
 
 router.get('/delete/:id', controlle.suppression);
-// router.get('/edit/:id',(req,res)=>{
-//     res.redirect(`/formulaire/${req.params.id}`,200)
-// });
-// router.post('/edit/:id', controlle.modifie);
+
 
 
 module.exports = router;

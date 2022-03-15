@@ -1,14 +1,13 @@
 const express = require('express');
 const controlle = require('../controller/utilisateurs');
 const  connect  = require('../database/connexion');
- const { valide,message } = require('../request/validation');
+//  const { valide,message } = require('../request/validation');
 const router =  express.Router();
 
 
 
 
-router.get('/',controlle.insertionGet) 
-router.post('/',valide,message,controlle.insertionPost) 
+
 
 
 
@@ -16,6 +15,8 @@ router.post('/',valide,message,controlle.insertionPost)
 router.post('edit/:id',(req,res)=>{
     console.log(req.body);
 }) 
+
+
 
 
 module.exports = router;

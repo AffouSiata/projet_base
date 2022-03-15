@@ -1,5 +1,6 @@
 const { promiseImpl, resolveInclude } = require('ejs');
 const req = require('express/lib/request');
+const res = require('express/lib/response');
 const  connect  = require('../database/connexion');
 
 
@@ -27,7 +28,7 @@ const data =class{
             let {nom,prenom,email,password,numero} = azerty;
             // console.log("donneés",azerty);
      
-            let requete = `INSERT INTO utilisateurs(nom,prenom,email,password,numero) VALUES(?,?,?,?,?);`;
+            let requete = `INSERT INTO utilisateurs(nom,prenom,password,email,numero) VALUES(?,?,?,?,?);`;
 
             connect.query(requete,[nom,prenom,password,email,numero],function(error,resultat){
 
@@ -49,9 +50,11 @@ const data =class{
 
 
     static connection = (nnn)=>{
-       connect.query('SELECT email,password FROM utilisateurs',function(error,resultat){
-           console.log(resultat);
-           if(resultat.email == nnn.email  && resultat.password == nnn.password ){
+       connect.query('SELECT password,email FROM utilisateurs',function(error,resultat){
+        //    console.log(resultat);
+           if(   resultat.password == nnn.password && resultat.email == nnn.email)
+           {
+            
                 console.log("connexion reussi",nnn.email);
            }
 
