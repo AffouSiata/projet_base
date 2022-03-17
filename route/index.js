@@ -15,8 +15,7 @@ router.get('/login',controlle.connectionGet)
 router.post('/login',controlle.connectionPost) 
 
 
-router.get('/',controlle.insertionGet) 
-router.post('/',controlle.insertionPost) 
+
 
 router.get('/delete/:id', controlle.suppression);
 

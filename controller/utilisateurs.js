@@ -3,6 +3,8 @@ const  connect  = require('../database/connexion');
 const router =  express.Router();
 const { request,response } = require("express");
 const data = require('../request/requete');
+const { validationResult } = require('express-validator');
+
 
 
 
@@ -19,13 +21,25 @@ const controlle = class{
         })
     }
     static insertionGet = (req=request,res=response)=>{
-        res.render('formulaire')
+        res.render('formulaire', {alert:null})
     }
 
     static insertionPost = (req=request,res=response)=>{
-        // console.log(req.body);
+        const errors = validationResult(req)
+        if(!errors.isEmpty() ){
+        // return res.status(422).jsonp(errors.array())
+        const alert =errors.mapped() 
+        console.log("erreur",alert);
+        res.render('formulaire',{
+            alert:alert  
+        }) 
+    }
+    else{
         data.insertion(req.body)
         res.redirect('/index')
+    }
+        // console.log(req.body);
+       
     
     }
     static connectionGet =(req=request,res=response)=>{
