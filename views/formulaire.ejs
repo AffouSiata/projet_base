@@ -14,30 +14,33 @@
     
 
     <div class=" container formulaire">
-
+       
 
         <h1>Inscrivez-vous </h1>
 
         <form method="post" action="/formulaire">
+            <% if(alert) {%>
+                <p><%= alert.message %></p>
+           <% } %>
             <div class="mb-3 row">
-                <label for="inputnom" class="col-sm-2 col-form-label">Nom :</label>
-                <div class="col-sm-10">
+                <!-- <label for="inputnom" class="col-sm-2 col-form-label">Nom :</label> -->
+                <div class="col-sm-10 taille">
                     
-                  <input type="text" name="nom" class="form-control"  id="nom" >
+                  <input type="text" name="nom" class="form-control"  id="nom" placeholder="Nom" >
                   <% if (alert && alert.nom) {%>
-                    <div class="validation">
+                    <div class="validation" style="color: red;">
                         <%= alert.nom.msg %> 
                     </div>
                 <% }%>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputprenom" class="col-sm-2 col-form-label" >Prenom:</label>
-                <div class="col-sm-10">
-                  <input type="text" name="prenom" class="form-control"  value="" id="prenom" >
+                <!-- <label for="inputprenom" class="col-sm-2 col-form-label" >Prenom:</label> -->
+                <div class="col-sm-10 taille">
+                  <input type="text" name="prenom" class="form-control"  value="" id="prenom" placeholder="Prenom" >
                   
                     <% if (alert && alert.prenom) {%>
-                        <div class="validation">
+                        <div class="validation" style="color: red;">
                             <%= alert.prenom.msg %> 
                         </div>
                     <% }%>
@@ -45,49 +48,45 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password: </label>
-                <div class="col-sm-10">
-                <input type="password"  name="password" class="form-control"  value="" id="password" >
+                <!-- <label for="inputPassword" class="col-sm-2 col-form-label">Password: </label> -->
+                <div class="col-sm-10 taille">
+                <input type="password"  name="password" class="form-control"  value="" id="password" placeholder="Password">
                 <% if (alert && alert.password) {%>
-                    <div class="validation">
+                    <div class="validation" style="color: red;">
                         <%= alert.password.msg %> 
                     </div>
                 <% }%>
-                <div>
-                    
+                </div>    
                
             </div>
             <div class="mb-3 row">
-                <label for="inputemail" class="col-sm-2 col-form-label">email:</label>
-                <div class="col-sm-10">
-                <input type="email" name="email" class="form-control"  value="" id="email" >
+                <!-- <label for="inputemail" class="col-sm-2 col-form-label">email:</label> -->
+                <div class="col-sm-10 taille">
+                <input type="email" name="email" class="form-control"  value="" id="email" placeholder="Email" >
                 <% if (alert && alert.email) {%>
-                    <div class="validation">
+                    <div class="validation" style="color: red;">
                         <%= alert.email.msg %> 
                     </div>
                 <% }%>
-                <div>
-                    
-                </div>
+
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputnumero" class="col-sm-2 col-form-label">Numero:</label>
-                <div class="col-sm-10">
-                <input type="number"  name="numero" class="form-control" value="" id="numero" >
+                <!-- <label for="inputnumero" class="col-sm-2 col-form-label">Numero:</label> -->
+                <div class="col-sm-10 taille">
+                <input type="number"  name="numero" class="form-control" value="" id="numero" placeholder="Numero">
                 <% if (alert && alert.numero) {%>
-                    <div class="validation">
+                    <div class="validation" style="color: red;">
                         <%= alert.numero.msg %> 
                     </div>
                 <% }%>
                 <div>
-                    
-                </div>
-                </div>
+
             </div>
-            <div class="mb-3">
+            <br>
+            <div class="mb-3 boutton" >
                 <!-- <a href="/index" type="submit" class="btn btn-primary btn-small"><p>Validé</p></a>  -->
-                <input type="submit" value="Valider">
+                <input type="submit" value="S'incrire">
             </div>
             
         </form>

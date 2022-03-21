@@ -1,7 +1,7 @@
 const express = require('express');
 const controlle = require('../controller/utilisateurs');
 const  connect  = require('../database/connexion');
-const { valide,message } = require('../request/validation');
+const { valide } = require('../request/validation');
 const router =  express.Router();
 
 
@@ -10,7 +10,7 @@ const router =  express.Router();
 
 router.get('/',controlle.insertionGet) 
 
-router.post('/',valide,controlle.insertionPost) 
+router.post('/', valide,controlle.insertionPost) 
 
 
 

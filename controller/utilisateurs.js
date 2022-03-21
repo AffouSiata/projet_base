@@ -11,14 +11,20 @@ const { validationResult } = require('express-validator');
 
 const controlle = class{
     static selection =(req=request,res=response)=>{
-        console.log("session sur index",req.session.user);
-        // req.session.user = nom;
-        data.sel().then(resultat =>{
-            res.render('index',{resultat:resultat})
-        })
-        .catch(error =>{
-            res.redirect('/error404')
-        })
+        if(req.session.user){
+            data.sel().then(resultat =>{
+                console.log("session",req.session.user );
+                res.render('index',{resultat:resultat})
+            })
+            .catch(error =>{
+              res.redirect('/error404')
+
+            })
+        }
+        else{
+            res.redirect('/login')
+        }
+        
     }
     static insertionGet = (req=request,res=response)=>{
         res.render('formulaire', {alert:null})
@@ -35,45 +41,55 @@ const controlle = class{
         }) 
     }
     else{
-        data.insertion(req.body)
-        res.redirect('/index')
+        data.insertion(req.body).then( succes =>{
+            res.redirect('/index')
+        })
+        .catch(error =>{
+            res.render('formulaire', {alert:error})
+            console.log(error);
+        })
+       
     }
         // console.log(req.body);
-       
-    
+
     }
+
+
     static connectionGet =(req=request,res=response)=>{
         if(req.session.user){
-            // console.log("loginsessi redirect");
-            res.redirect('/index')
-
+           return res.redirect('/index')
         }
-        // console.log("sessionlog");
+    
         res.render('login')
 
     }
     static connectionPost = (req=request,res=response)=>{
-        let session ={
-            email:req.body.email,
-            password:req.body.password
-        }
-        req.session.user = session
-        console.log("ma session connecté",req.session.user);
 
-        // console.log(req.body);
-        data.connection(req.body)
-        res.redirect('/index')
-    
+                data.connection(req.body).then(succes=>{
+                    let session ={
+                        email:req.body.email,
+                        password:req.body.password
+                    }
+                        req.session.user = session
+                        console.log("ma session connecté",req.session.user);
+                        res.redirect('/index')
+                })
+                .catch(error =>{
+                    res.redirect('/error404')
+                    console.log("erreur",error);
+                })         
     }
+        
+
     static maliste =(req=request,res=response)=>{
-        console.log("sessionAcc",req.session.user);
+        // console.log("sessionAcc",req.session.user);
         res.render('acceuil')
     }
 
     static suppression = (req=request,res=response)=>{
         // console.log(req.body);
         data.suppression(req)
-        res.redirect('/')
+        res.redirect('/index')
     
     }
 

@@ -16,6 +16,12 @@ exports.valide =
     .isAlpha().withMessage('le prenom ne peut pas contenir de chiffres ou de caractères spéciaux '),
 
 
+    check('password') .not().isEmpty().withMessage('le mot de passe ne peut pas,être vide')
+    .isLength({
+        min:4,
+    }),
+    
+
     check('email','email nest pas valide')
     .isEmail()
     .normalizeEmail(),
@@ -30,7 +36,5 @@ exports.valide =
     })
     
 ]
-exports.message = (req,res)=>{
-    
-}
+
  

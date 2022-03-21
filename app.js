@@ -4,6 +4,9 @@ const db = require('./database/connexion');
 const index  = require('./route/index');
 const routeforme = require('./route/formulaire')
 const  session  =  require ( 'express-session' );
+const { TokenExpiredError } = require("jsonwebtoken");
+
+
 
 
 
@@ -23,8 +26,9 @@ db.connect((error)=>{
             secret: 'keyboard cat',
             resave: false,
             saveUninitialized: true,
-            cookie: { maxAge: 60000 }  
+            cookie: { maxAge: 60000000000 }  
         }))
+
         app.set('views','./views');
         app.set('view engine','ejs')
 

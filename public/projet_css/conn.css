@@ -4,7 +4,7 @@
     transform: translate(-50%,-50%);
 } */
 body{
-    background-color: deepskyblue;
+    background-color: gainsboro;
 }
 .connexion h1{
     text-align: center;
@@ -18,14 +18,43 @@ form{
     padding: 20px;
     border-radius: 10px;
 }
-form label{
-    font-size: 40px;
-    font-weight: bold;
+.taille input{
+    width: 560px;
+    height: 50px;
 }
-.btn{
-    margin-left: 5%;
-    width: 120px;
+
+.boutton a{
+    /* margin-left: 30%; */
 }
-.btn p{
+.valide{
+    border: 1px solid black;
+    height: 50px;
+    width: 560px;
+    background-color:  #1877f2;
+    border-radius: 5px;
     font-size: 30px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+.valide:hover{
+    opacity: 0.95;
+}
+.lien a{
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+}
+.btn {
+    border: 1px solid black;
+    height: 50px;
+    width: 260px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #42b72a;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    margin-left: 25%;
+  
 }
