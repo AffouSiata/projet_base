@@ -1,8 +1,11 @@
 const express = require('express');
 const controlle = require('../controller/utilisateurs');
 const  connect  = require('../database/connexion');
-const { valide } = require('../request/validation');
+const { valide } = require('../millderware/validation');
 const router =  express.Router();
+// const { verifie } = require("../milldeware/verifie");
+
+
 
 
 

@@ -30,7 +30,7 @@ const data =class{
             let requete = `INSERT INTO utilisateurs(nom,prenom,password,email,numero) VALUES(?,?,?,?,?);`;
             let verification  = `SELECT * FROM utilisateurs WHERE email=?`;
             connect.query(verification,[email],function(error,resultats){
-                if(!resultats){
+                if(resultats){
                     connect.query(requete,[nom,prenom,password,email,numero],function(error,resultat){
                         if(error)
                         { 

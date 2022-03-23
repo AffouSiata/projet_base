@@ -2,8 +2,12 @@ const express = require('express');
 const  connect  = require('../database/connexion');
 const router =  express.Router();
 const { request,response } = require("express");
-const data = require('../request/requete');
+const data = require('../millderware/requete');
 const { validationResult } = require('express-validator');
+const authenticateJWT = require('../millderware/token');
+const mail = require('../millderware/mailer');
+
+
 
 
 
@@ -13,7 +17,7 @@ const controlle = class{
     static selection =(req=request,res=response)=>{
         if(req.session.user){
             data.sel().then(resultat =>{
-                console.log("session",req.session.user );
+                // console.log("session",req.session.user );
                 res.render('index',{resultat:resultat})
             })
             .catch(error =>{
@@ -27,6 +31,7 @@ const controlle = class{
         
     }
     static insertionGet = (req=request,res=response)=>{
+        
         res.render('formulaire', {alert:null})
     }
 
@@ -39,9 +44,15 @@ const controlle = class{
         res.render('formulaire',{
             alert:alert  
         }) 
+
+        
     }
+
     else{
         data.insertion(req.body).then( succes =>{
+        const  envoie = mail();
+        const veri=    authenticateJWT.creetoken(req.body);
+        authenticateJWT.authen(veri)
             res.redirect('/index')
         })
         .catch(error =>{
@@ -54,8 +65,13 @@ const controlle = class{
 
     }
 
+     
+        
 
-    static connectionGet =(req=request,res=response)=>{
+    
+
+
+    static connectionGet =(req=request,res=response,token)=>{
         if(req.session.user){
            return res.redirect('/index')
         }
@@ -71,13 +87,15 @@ const controlle = class{
                         password:req.body.password
                     }
                         req.session.user = session
-                        console.log("ma session connecté",req.session.user);
+                        // console.log("ma session connecté",req.session.user);
                         res.redirect('/index')
                 })
                 .catch(error =>{
                     res.redirect('/error404')
                     console.log("erreur",error);
-                })         
+                }) 
+                
+                
     }
         
 
@@ -91,24 +109,7 @@ const controlle = class{
         data.suppression(req)
         res.redirect('/index')
     
-    }
-
-    // static getOneController = async (req=request,res=response)=>{
-    //     console.log("id: ",req.params.id);
-    //     let result = await data.getOne(req.params.id)
-    //     console.log("result",result);
-    //     res.render('formulaire',{data: result})
-    // }
-
-
-
-    // static modifiepost =(req=request,res=response)=>{
-    //     console.log(req.body);
-    //     data.suppression(req)
-    //     res.redirect('/')
-    // }
-
-  
+    } 
     
 }
 

@@ -3,6 +3,8 @@ const res = require('express/lib/response');
 const controlle = require('../controller/utilisateurs');
 const  connect  = require('../database/connexion');
 const router =  express.Router();
+var  jwt  = require ( 'jsonwebtoken' ) ;
+// const { verifie } = require("../milldeware/verifie");
 
 
 
