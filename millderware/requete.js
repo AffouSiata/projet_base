@@ -2,6 +2,8 @@ const { promiseImpl, resolveInclude } = require('ejs');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 const  connect  = require('../database/connexion');
+const mail = require('./mailer');
+
 
 
 

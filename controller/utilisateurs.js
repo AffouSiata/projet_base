@@ -36,6 +36,7 @@ const controlle = class{
     }
 
     static insertionPost = (req=request,res=response)=>{
+       
         const errors = validationResult(req)
         if(!errors.isEmpty() ){
         // return res.status(422).jsonp(errors.array())
@@ -50,9 +51,9 @@ const controlle = class{
 
     else{
         data.insertion(req.body).then( succes =>{
-        const  envoie = mail();
         const veri=    authenticateJWT.creetoken(req.body);
-        authenticateJWT.authen(veri)
+        const  envoie = mail(req.body,veri);
+        
             res.redirect('/index')
         })
         .catch(error =>{

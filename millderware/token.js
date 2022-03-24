@@ -5,14 +5,16 @@ const jwt  = require ( 'jsonwebtoken' ) ;
 const  authenticateJWT =class{
 
     static creetoken = (req)=>{
-        if(req.email == "sa@gmail.com" && req.password =="sasa"){
-            let token = jwt.sign({email : req.email},"anNvbnRva2Vu");  
+        let users ={
+            email:req.email,
+            password:req.password
+        }
+       
+            let token = jwt.sign(users,"anNvbnRva2Vu");  
             console.log(token);
             return token
-        }
-        else{
-            console.log({message: "login ou password incorrect "})
-        } 
+        
+        
     }
 
     static authen =(token)=>{
